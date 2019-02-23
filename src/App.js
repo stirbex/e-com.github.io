@@ -1,23 +1,22 @@
-import React, { Component } from 'react';
-import {Switch,Route} from 'react-router-dom';
-import logo from './logo.svg';
-import './App.css';
-import'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from './components/Navbar.js';
-import Cart from './components/Cart.js';
-import Default from './components/Default.js';
-import Details from './components/Details.js';
-import ProductList from './components/ProductList.js';
+import React, { Component } from "react";
+import { Switch, Route } from "react-router-dom";
+import logo from "./logo.svg";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "./components/Navbar.js";
+import Cart from "./components/Cart.js";
+import Default from "./components/Default.js";
+import Details from "./components/Details.js";
+import ProductList from "./components/ProductList";
 
 class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar></Navbar>
+        <Navbar />
         <Switch>
-          <Route exact path="/" component={ProductList} />
-          <Route path="/details" component={Details} />
-          <Route path="/cart" component={Cart} />
+          <Route path="/" component={ProductList} />
+          <Route path="/Details" component={Details} />
+          <Route path="/Cart" component={Cart} />
           <Route component={Default} />
         </Switch>
       </React.Fragment>

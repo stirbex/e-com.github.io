@@ -38,9 +38,9 @@ https://www.iconfinder.com/Makoto_msk */}
 }
 
 const NavWrapper = styled.nav`
-    background: var(--mainBlue);
+    background-color: #2a2a72;
     .nav-link {
-        color:var(--mainWhite)!important;
+        color: #f3f3f3 !important;
         font-size: 1.3rem;
         text-transform: capitalize;
     }
