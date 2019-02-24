@@ -1,15 +1,15 @@
 :root {
-  --mainBlue: #2a2a72;
+  --mainBlue: #d4d4f3;
   --lightBlue: #009ffd;
-  --mainWhite: #f3f3f3;
+  --mainWhite: ;
   --mainDark: #232528;
   --mainYellow: #ffa400;
 }
 
 body{
   font-family: 'Oswald', sans-serif !important;
-  background: var(--mainWhite) !important;
-  color: var(--mainDark) !important;
+  background: #f3f3f3 !important;
+  color: #232528 !important;
 }
 
 .text-title{
@@ -19,7 +19,7 @@ body{
 }
 
 .text-blue{
-  color: var(--mainBlue);
+  color: #d4d4f3;
 }
 
 .text-bright {

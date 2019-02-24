@@ -52,12 +52,14 @@ export default class Product extends Component {
 const ProductWrapper = styled.div`
   .card {
     border-color: transparent;
+    border-radius: 0.5rem;
+    background-color: #e3e3e9;
     transition: all 1s linear;
   }
   .card-footer {
-    background: transparent;
-    border-top: transparent;
-    transition: all 1s linear;
+    background-color: lightblue;
+    border-top: red;
+    transition: all 0.5s linear;
   }
   &:hover {
     .card {
