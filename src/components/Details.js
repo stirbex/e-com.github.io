@@ -3,6 +3,7 @@ import { ProductConsumer } from "../context";
 import { Link } from "react-router-dom";
 import ButtonContainer from "./Button.js";
 import styled from "styled-components";
+import '../App.css';
 
 export default class Details extends Component {
   render() {
@@ -23,7 +24,7 @@ export default class Details extends Component {
               <div className="row">
                 <div
                   className="col-10 max-auto
-            text-center text-slanted text-blue my-5"
+            text-center text-slanted text-blue my-5 bounceInDown"
                 >
                   <h1>{title}</h1>
                 </div>

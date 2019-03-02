@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { ProductConsumer } from "../context";
 import PropTypes from "prop-types";
+import '../App.css';
 
 export default class Product extends Component {
   render() {
@@ -44,7 +45,7 @@ export default class Product extends Component {
             className="card-footer d-flex
         justify-content-between"
           >
-            <p className="align-slef-center mb-0">{title}</p>
+            <p className="align-slef-center mb-0 bounceInDown">{title}</p>
             <h5 className="text-blue font-italic mb-0">
               <span className="mr-1">$</span>
               {price}
