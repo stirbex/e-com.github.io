@@ -25,3 +25,17 @@ body{
 .text-bright {
   color: var(--lightBlue);
 }
+
+.btn {
+  border: 0.1rem solid black !important;
+}
+
+.btn:hover {
+  background: #FF6347;
+  cursor: pointer;
+}
+
+.color {
+  cursor: pointer;
+  color: red;
+}
