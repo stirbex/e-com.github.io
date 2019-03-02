@@ -11,27 +11,35 @@ export default class Product extends Component {
     return (
       <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
         <div className="card">
-          <div className="img-container p-5" onClick={console.log("salut")}>
-            <Link to="/details">
-              <img src={img} alt="product" className="card-img-top" />
-            </Link>
-            <button
-              className="cart-btn"
-              disabled={inCart ? true : false}
-              onClick={() => {
-                console.log("added to the cart");
-              }}
-            >
-              {inCart ? (
-                <p className="text-capitalize mb-0" disabled>
-                  {" "}
-                  in cart
-                </p>
-              ) : (
-                <i className="fas fa-cart-plus" />
-              )}
-            </button>
-          </div>
+          <ProductConsumer>
+            {value => (
+              <div
+                className="img-container p-5"
+                onClick={() => value.handleDetail(id)}
+              >
+                <Link to="/details">
+                  <img src={img} alt="product" className="card-img-top" />
+                </Link>
+                <button
+                  className="cart-btn"
+                  disabled={inCart ? true : false}
+                  onClick={() => {
+                    value.addToCart(id);
+                    value.openModal(id);
+                  }}
+                >
+                  {inCart ? (
+                    <p className="text-capitalize mb-0" disabled>
+                      {" "}
+                      in cart
+                    </p>
+                  ) : (
+                    <i className="fas fa-cart-plus" />
+                  )}
+                </button>
+              </div>
+            )}
+          </ProductConsumer>
           <div
             className="card-footer d-flex
         justify-content-between"
@@ -48,26 +56,33 @@ export default class Product extends Component {
   }
 }
 
+Product.PropTypes = {
+  product: PropTypes.shape({
+    id: PropTypes.number,
+    img: PropTypes.string,
+    title: PropTypes.string,
+    price: PropTypes.number,
+    inCart: PropTypes.bool
+  }).isRequired
+};
 
 const ProductWrapper = styled.div`
   .card {
     border-color: transparent;
-    border-radius: 0.5rem;
-    background-color: #e3e3e9;
     transition: all 1s linear;
   }
   .card-footer {
-    background-color: lightblue;
-    border-top: red;
-    transition: all 0.5s linear;
+    background: transparent;
+    border-top: transparent;
+    transition: all 1s linear;
   }
   &:hover {
     .card {
-      border: 0.4rem solid rgba(50, 20, 10, 0.2);
+      border: 0.4rem solid rgba(0, 0, 0, 0.2);
       box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
     }
     .card-footer {
-      background-color: rgba(150, 170, 100, 0.2);
+      background: rgb1q(247, 247, 247);
     }
   }
   .img-container {
@@ -86,9 +101,9 @@ const ProductWrapper = styled.div`
     button: 0;
     right: 0;
     padding: 0.2rem 0.4rem;
-    background-color: #009ffd;
+    background: var(--lightBlue);
     border: none;
-    
+    color: var(--mainWhite);
     font-size: 1.4rem;
     border-radius: 0.5rem 0 0 0;
     transform: translate(100%, 100%);
@@ -99,7 +114,7 @@ const ProductWrapper = styled.div`
   }
 
   .cart-btn:hover {
-    background-color: #2a2a72;
+    color: var(--mainBlue);
     cursor: pointer;
   }
 `;
